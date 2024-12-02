@@ -1,24 +1,47 @@
 ﻿
-$("#btnAdd").on("click", () => {
-    if ($("#radioappendselection").val() === "append") {
-        let val = $("#input").val();
-        let option = '<option value="' + val + '">' + val + '</option>';
-        $("#lbEntries").append(option);
+$(`#btnAdd`).on("click", () => {
+
+    var radioValue = $("input[name='radioappendselection']:checked").val();
+    let val = $("#input").val();
+
+    if (radioValue === "append") {                
+        $('#lbEntries').append($('<option>').val(val).text(val));
     }
 
-    if ($("#radioappendselection").val() === "prepend") {
-        let val = $("#input").val();
-        let option = '<option value="' + val + '">' + val + '</option>';
-        $("#lbEntries").prepend(option);
+    if (radioValue === "prepend") {
+        $('#lbEntries').prepend($('<option>').val(val).text(val));
+    }
+});
+
+$("#btnRemove").on("click", () => {
+
+    var radioValue = $("input[name='radioappendselection']:checked").val();
+    let hasSelection = false;
+    
+
+    if (!$("#lbEntries").val() == "") {
+        hasSelection = true;
+    }
+
+    if (hasSelection) {  
+        $('#lbEntries option:selected').remove();
+    }
+    else if (radioValue === "append") {
+        $("#lbEntries option:last-child").remove();
+    }
+    else if (radioValue === "prepend") {
+        $("#lbEntries option:first-child").remove();
     }
 })
 
-$("#btnRemove").on("click", () => {
-    if ($("#radioappendselection").val() === "append") {
-        $("#lbEntries").last().remove();
+$("input[name='radioselection']").on("change", () => {
+    var radioValue2 = $("input[name='radioselection']:checked").val();
+
+    if (radioValue2 === "single") {
+        $("#lbEntries").removeAttr('multiple')
     }
 
-    if ($("#radioappendselection").val() === "prepend") {
-        $("#lbEntries").first().remove();
+    if (radioValue2 === "multiple") {
+        $("#lbEntries").attr('multiple', 'multiple')
     }
 })

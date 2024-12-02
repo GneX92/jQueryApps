@@ -20,4 +20,12 @@ button {
     margin-left: 10px;
 }
 
+input {
+    width: 200px;
+}
+
+select {
+    width: 200px;
+}
+
 
