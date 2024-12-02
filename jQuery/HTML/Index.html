@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../CSS/site.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>jQuery Testings</title>
+    <script defer src="../Scripts/jquery-3.7.1.min.js"></script>
+    <script defer src="../JS/Index.js"></script>
+</head>
+<body>
+    <div id="fomr1">
+        <div class="row">
+                <input id="input" placeholder="Beliebiger Text" type="text" />
+                <button id="btnAdd">Add Entry</button>
+        </div>
+        <div class="row">
+                <input id="radioappend" type="radio" value="append" name="radioappendselection" /><label for="radioappend">Append</label>
+                <input id="radioprepend" type="radio" value="prepend" name="radioappendselection" /><label for="radioprepend">Prepend</label>
+        </div>
+        <div class="row" style="vertical-align:central;">
+                <select size="7" id="lbEntries"></select>
+                <button id="btnRemove">Remove Entry</button>
+        </div>
+        <div class="row">
+                <input id="radiosingle" type="radio" value="single" name="radioselection" /><label for="radiosingle">Single Select</label>
+                <input id="radiomulti" type="radio" value="multiple" name="radioselection" /><label for="radiomulti">Multi Select</label>
+        </div>
+    </div>
+</body>
+</html>
