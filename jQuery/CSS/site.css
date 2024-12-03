@@ -20,12 +20,15 @@ button {
     margin-left: 10px;
 }
 
-input {
+input[type=text] {
     width: 200px;
 }
 
 select {
-    width: 200px;
+    width: 210px;
 }
 
+#btnRemove {
+    vertical-align: top;
 
+}
